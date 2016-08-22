@@ -7,6 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('clause');
+  this.route('clause-block');
 });
 
 export default Router;
