@@ -1,3 +1,51 @@
-<h1>Clause</h1>
+<h1>{{model.name}}</h1>
+<ul>
+  <li>Name: {{model.name}}</li>
+  <li>Title: {{model.title}}</li>
+  <li>Type: {{model.type}}</li>
+  <li>Created By: {{model.createdBy}}</li>
+  <li>Last Updated By: {{model.lastUpdatedBy}}</li>
+</ul>
+
+<p>Blocks</p>
+
+{{#each model.clauseBlocks as |block|}}
+  <ul>
+    <li>Order Number: {{block.orderNumber}}</li>
+    <li>Title: {{block.title}}</li>
+    <li>Type: {{block.type}}</li>
+    <li>Static Text: {{block.staticText}}</li>
+    <li>Toggle Menu Text: {{block.toggleMenuText}}</li>
+    <li>Toggle Default? {{block.toggleDefault}}</li>
+    <li>Help Text: {{block.helpText}}</li>
+    <li>Dropdowns:</li>
+    {{#each block.blockDropdowns as |dropdown|}}
+    <ul>
+      <li>{{dropdown.orderNumber}}</li>
+        <ul>
+          <li>Menu Text: {{dropdown.menuText}}</li>
+          <li>Text: {{dropdown.text}}</li>
+          <li>Default? {{dropdown.defaultTrue}}</li>
+        </ul>
+    </ul>
+    {{/each}}
+    <li>Checkboxes:</li>
+    {{#each block.blockCheckboxes as |checkbox|}}
+      <ul>
+        <li>Number: {{checkbox.orderNumber}}</li>
+        <ul>
+          <li>{{checkbox.menuText}}</li>
+          <li>{{checkbox.defaultTrue}}</li>
+        </ul>
+      </ul>
+    {{/each}}
+    <li>Checkboxes Choices:</li>
+    {{#each block.blockCheckboxChoices as |choice|}}
+      <ul>
+        <li>{{choice.title}}: {{choice.text}}</li>
+      </ul>
+    {{/each}}
+  </ul>
+{{/each}}
 
 {{outlet}}

@@ -7,5 +7,10 @@ export default DS.Model.extend({
   createdAt: DS.attr('date', {
     defaultValue() { return new Date(); }
   }),
+  type: DS.attr('string'),
+  createdBy: DS.attr('string'),
+  lastUpdatedBy: DS.attr('string'),
+  tags: DS.hasMany('tag'),
+  
 
 });

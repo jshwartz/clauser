@@ -1,5 +1,11 @@
 export default function() {
   this.get('/clauses');
+  this.get('/clauses/:id');
+  this.get('/clause-blocks/:id');
+  this.get('/block-dropdowns/:id');
+  this.get('/block-checkboxes/:id');
+  this.get('/block-checkbox-choices/:id');
+
 
   // These comments are here to help you get started. Feel free to delete them.
 

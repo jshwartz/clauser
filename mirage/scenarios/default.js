@@ -1,5 +1,5 @@
 export default function(server) {
-  server.createList('clause', 10);
+  server.loadFixtures();
 
   /*
     Seed your development database using your factories.
